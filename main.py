@@ -45,7 +45,7 @@ attachments_json = [
 def index():
     slack_client.api_call(
         "chat.postMessage",
-        channel="#general",
+        channel="#tech",
         text="あなたはどっち派？",
         attachments=attachments_json
     )
