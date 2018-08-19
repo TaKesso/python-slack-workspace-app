@@ -24,13 +24,13 @@ attachments_json = [
         "actions": [
             {
                 "name": "choco1",
-                "text": "きのこ",
+                "text": "kinoko",
                 "value": "kinoko",
                 "type": "button"
             },
             {
                 "name": "choco2",
-                "text": "たけのこ",
+                "text": "takenoko",
                 "value": "takenoko",
                 "type": "button"
             }
@@ -46,7 +46,7 @@ def index():
     slack_client.api_call(
         "chat.postMessage",
         channel="#tech",
-        text="あなたはどっち派？",
+        text="Which do you like?",
         attachments=attachments_json
     )
     return make_response("", 200)
@@ -60,9 +60,9 @@ def json_html():
 
     val = form_json["actions"][0]["value"]
     if val == "kinoko":
-        response_text = "よろしい、ならば戦争だ"
+        response_text = "Oh...."
     else:
-        response_text = "よろしい、ならば盟友だ"
+        response_text = "YES!!!!!!"
     response = slack_client.api_call(
         "chat.postMessage",
         channel="#tech",
